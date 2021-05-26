@@ -279,25 +279,24 @@ architecture Behavior of top is
         pPs2Dat         	=> ps2_data_io,
 		
         -- Joystick ports (Port_A, Port_B)
-		  
-		-- pJoyA(5)				=>	joy1_p7_io,
-		-- pJoyA(4)				=> joy1_p6_io,
-		-- pJoyA(3)				=>	joy1_right_io,
-		-- pJoyA(2)				=>	joy1_left_io,
-		-- pJoyA_in(1)			=>	joy1_down_io,
-		 --pJoyA_in(0)			=>	joy1_up_io,
+		  pJoyA(5)			=>	joy1_s(5),
+		  pJoyA(4)			=> joy1_s(4),
+		  pJoyA(3)			=>	joy1_s(0),
+		  pJoyA(2)			=>	joy1_s(1),
+		  pJoyA(1)			=>	joy1_s(2),
+		  pJoyA(0)			=>	joy1_s(3),
  
-		  pJoyA     			=> joymouse_s,
+		  --pJoyA     			=> joymouse_s,  --Para incluir Raton... depurando.
 			
-		  pJoyB(5)			=>	joy2_s(5), --joy2_p7_io,
-		  pJoyB(4)			=> joy2_s(4), --joy2_p6_io,
-		  pJoyB(3)			=>	joy2_s(0), --joy2_right_io,
-		  pJoyB(2)			=>	joy2_s(1), --joy2_left_io,
-		  pJoyB(1)			=>	joy2_s(2), --joy2_down_io,
-		  pJoyB(0)			=>	joy2_s(3), --joy2_up_s,
+		  pJoyB(5)			=>	joy2_s(5), 
+		  pJoyB(4)			=> joy2_s(4), 
+		  pJoyB(3)			=>	joy2_s(0), 
+		  pJoyB(2)			=>	joy2_s(1), 
+		  pJoyB(1)			=>	joy2_s(2), 
+		  pJoyB(0)			=>	joy2_s(3), 
 		  
-        pStrA           => strA_s, --joy1_p8_io,
-        pStrB           => open,   --joy2_p8_io,
+        pStrA           => strA_s, 
+        pStrB           => open,   
 	  
         -- SD/MMC slot ports
 		  pSd_Ck          => sd_sclk_o,             	-- pin 5 Clock
