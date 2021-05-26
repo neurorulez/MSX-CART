@@ -36,7 +36,6 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 
-
 set_location_assignment PIN_T2 -to clock_50_i
 
 set_location_assignment PIN_E4 -to LED
@@ -111,11 +110,7 @@ set_location_assignment PIN_B21 -to ps2_mouse_data_io
 
 set_location_assignment PIN_A3 -to dac_l_o
 set_location_assignment PIN_B4 -to dac_r_o
-#set_location_assignment PIN_N5 -to mic_o
 set_location_assignment PIN_AA13 -to ear_i
-
-#set_location_assignment PIN_R8 -to btn_n_i[2]
-#set_location_assignment PIN_T8 -to btn_n_i[1]
 
 set_location_assignment PIN_D22 -to sd_cs_n_o
 set_location_assignment PIN_E21 -to sd_miso_i
@@ -125,40 +120,12 @@ set_location_assignment PIN_E22 -to sd_sclk_o
 set_location_assignment PIN_A20 -to JOY_CLK
 set_location_assignment PIN_B20 -to JOY_LOAD
 set_location_assignment PIN_B19 -to JOY_DATA
-#set_location_assignment PIN_AA18 -to JOY_SELECT
+set_location_assignment PIN_AA18 -to JOY_SELECT
 
 set_location_assignment PIN_AB16 -to esp_tx_i
 set_location_assignment PIN_AB20 -to esp_rx_o
 
 set_location_assignment PIN_Y21 -to stm_rst_o
-
-#set_location_assignment PIN_T13 -to joy1_down_io
-#set_location_assignment PIN_N6 -to joy2_right_io
-#set_location_assignment PIN_N8 -to joy2_left_io
-#set_location_assignment PIN_M7 -to joy2_p8_io
-#set_location_assignment PIN_T10 -to joy2_up_io
-#set_location_assignment PIN_M6 -to joy2_p7_io
-#set_location_assignment PIN_P8 -to joy2_p6_io
-#set_location_assignment PIN_P9 -to joy2_down_io
-#set_location_assignment PIN_T12 -to joy1_p6_io
-#set_location_assignment PIN_R10 -to joy1_p8_io
-#set_location_assignment PIN_T15 -to joy1_left_io
-#set_location_assignment PIN_T14 -to joy1_p7_io
-#set_location_assignment PIN_N9 -to joy1_right_io
-#set_location_assignment PIN_R12 -to joy1_up_io
-
-#set_location_assignment PIN_F15 -to aud_i2s
-#set_location_assignment PIN_J13 -to aud_sck
-#set_location_assignment PIN_G15 -to aud_ws
-#set_location_assignment PIN_C15 -to hdmi_pclk
-#set_location_assignment PIN_K16 -to hdmi_rst
-#set_location_assignment PIN_J14 -to hdmi_scl
-#set_location_assignment PIN_F14 -to hdmi_sda
-#set_location_assignment PIN_D15 -to hdmi_de
-#set_location_assignment PIN_M1 -to hdmi_int
-
-#set_location_assignment PIN_R9 -to sd_sw_i
-
 
 #set_location_assignment PIN_ -to slot_SLOT2_o
 #set_location_assignment PIN_ -to slot_SLOT3_o
@@ -166,27 +133,18 @@ set_location_assignment PIN_Y21 -to stm_rst_o
 
 #set_location_assignment PIN_ -to slot_DATA_DIR_o
 #set_location_assignment PIN_ -to slot_DATA_OE_o
+#set_location_assignment PIN_ -to slot_CS1_o
 #set_location_assignment PIN_ -to slot_CS2_o
 
 set_location_assignment PIN_P22 -to slot_SLOT1_o
 set_location_assignment PIN_V21 -to slot_WAIT_i
 set_location_assignment PIN_W22 -to slot_WR_o
-set_location_assignment PIN_AA17 -to slot_CS1_o
-set_location_assignment PIN_AA18 -to slot_M1_o
+set_location_assignment PIN_AA17 -to slot_M1_o
 set_location_assignment PIN_U22 -to slot_MREQ_o
 set_location_assignment PIN_V22 -to slot_RD_o
 set_location_assignment PIN_Y22 -to slot_RESET_io
 set_location_assignment PIN_W21 -to slot_IOREQ_o
 set_location_assignment PIN_N22 -to slot_INT_i
-
-#set_location_assignment PIN_M16 -to dip_i[8]
-#set_location_assignment PIN_M15 -to dip_i[7]
-#set_location_assignment PIN_B8 -to dip_i[6]
-#set_location_assignment PIN_A8 -to dip_i[5]
-#set_location_assignment PIN_A9 -to dip_i[4]
-#set_location_assignment PIN_B9 -to dip_i[3]
-#set_location_assignment PIN_E15 -to dip_i[2]
-#set_location_assignment PIN_E16 -to dip_i[1]
 
 set_location_assignment PIN_J21 -to slot_CLOCK_o
 set_location_assignment PIN_R22 -to slot_RFSH_i
@@ -216,9 +174,6 @@ set_location_assignment PIN_H22 -to slot_D_io[2]
 set_location_assignment PIN_H21 -to slot_D_io[1]
 set_location_assignment PIN_F22 -to slot_D_io[0]
 
-
-
-
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ps2_clk_io
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ps2_data_io
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ps2_mouse_clk_io
@@ -226,22 +181,6 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ps2_mouse_data_io
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to sd_miso_i
 
 
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_down_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_up_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_right_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_p8_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_p7_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_p6_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_left_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy2_down_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_up_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_right_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_p8_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_p7_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_p6_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joy1_left_io
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to hdmi_scl
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to hdmi_sda
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to slot_RD_o
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to slot_WR_o
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to slot_M1_o
