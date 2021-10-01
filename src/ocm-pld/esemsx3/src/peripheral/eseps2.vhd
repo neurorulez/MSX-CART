@@ -327,9 +327,10 @@ begin
                 Ps2xE0 := '0';
                 Ps2xE1 := '0';
               end if;
-            elsif( Ps2Dat = X"7C" and Ps2xE0 = '1' and Ps2xE1 = '0' )then -- printscreen make
+            elsif( Ps2Dat = X"7C" and Ps2xE0 = '1' and Ps2xE1 = '0' )then -- printscreen make (Cambiado por el bit de F12 que es el turbo)
               if Ps2brk = '0' then
-                Reso <= not Reso;       -- toggle display mode
+                oFkeys(0) := not oFkeys(0);
+					 --Reso <= not Reso;       -- toggle display mode
               end if;
               Ps2Chg := '1';
             elsif( Ps2Dat = X"7D" and Ps2xE0 = '1' and Ps2xE1 = '0' )then -- PgUp make
@@ -357,14 +358,15 @@ begin
                 oFkeys(1) := not oFkeys(1);
               end if;
               Ps2Chg := '1';
-            elsif( Ps2Dat = X"07" and Ps2xE0 = '0' and Ps2xE1 = '0' )then -- F12 make
+            --elsif( Ps2Dat = X"07" and Ps2xE0 = '0' and Ps2xE1 = '0' )then -- F12 make
+            --  if Ps2brk = '0' then
+            --    oFkeys(0) := not oFkeys(0);     --  old toggle OnScreenDisplay enable
+            --  end if;
+            --  Ps2Chg := '1';
+            elsif( Ps2Dat = X"7E" and Ps2xE0 = '0' and Ps2xE1 = '0' )then -- scroll-lock make (Deshabilitado)
               if Ps2brk = '0' then
-                oFkeys(0) := not oFkeys(0);     --  old toggle OnScreenDisplay enable
-              end if;
-              Ps2Chg := '1';
-            elsif( Ps2Dat = X"7E" and Ps2xE0 = '0' and Ps2xE1 = '0' )then -- scroll-lock make
-              if Ps2brk = '0' then
-                Scro <= not Scro;  -- toggle scroll lock (currently used for CMT switch)
+            --    Scro <= not Scro;  -- toggle scroll lock (currently used for CMT switch)
+
             --    Scro <= not Scro;  -- toggle scroll lock (currently used for 101/106 keyboard switch)
             --    MtxTmp := "0000";
             --    MtxSeq := MtxReset;

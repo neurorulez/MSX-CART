@@ -216,7 +216,7 @@ architecture Behavior of top is
 
 	begin
 
-	--status(3) cartucho 1 (1 = vacio / 0= SCC+) lo ponemos al reves que OSD
+	--status(3) cartucho 1 (1 = vacio / 0= SCC+) lo ponemos al reves que OSD --Status(2) Turbo
 	stm_rst_o <= '0';	  
 --	dip_i <=	'0' & not status(6) & status(5) & not status(4) & not status(3) & (status(1) and status(8)) & not status(1) & not status(2);
 	dip_i <=	'0' & not status(6) & status(5) & not status(4) & not status(3) & (not status(1) and status(8)) & status(1) & not status(2);
